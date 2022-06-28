@@ -1,17 +1,15 @@
 import cbpro
 import time
+import json
 import pprint as pp
 
-""" paste your coinbase api info into into the variables below within
-the quote marks. """
-cbpro_apikey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-cbpro_secret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-cbpro_passphrase = "your_passphrase"
+with open("config.json", "r") as f:
+    config = json.load(f)
 
 auth_client = cbpro.AuthenticatedClient(
-    cbpro_apikey,
-    cbpro_secret,
-    cbpro_passphrase,
+    config["cbpro_api_key"],
+    config["cbpro_secret"],
+    config["cbpro_passphrase"],
 )
 
 # change daily buys as you like
