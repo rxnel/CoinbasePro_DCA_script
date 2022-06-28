@@ -21,7 +21,10 @@ def daily_buy():
     try_market_buy(product_id="LINK-USD", amt="10")
 
 
-# tries to create a market order for product_id. if there are insufficient funds, user will be prompted if they want to reload their balance and then try to purchase again if they do.
+# tries to create a market order for product_id. if there are insufficient funds,
+# the user will be prompted if they want to reload their balance. If they must
+# select their preferred payment method and then their market-buy will be attempted
+# again after depositing.
 def try_market_buy(product_id, amt):
     response = auth_client.place_market_order(
         product_id=product_id, side="buy", funds=amt
