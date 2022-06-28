@@ -8,7 +8,7 @@ pip install git+git://github.com/danpaquin/coinbasepro-python.git
 ```
 
 ## API Keys **change before using**
-edit the API key values in DCA_script.py according to the values at https://pro.coinbase.com/profile/api
+edit the API key values in config.json according to the values at https://pro.coinbase.com/profile/api
 
 ## Using the script
 Before running the script for the first time, edit your daily buys as you see fit using valid trading pairs (i.e. 'BTC-USD').
